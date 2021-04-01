@@ -1,6 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY ./package.json ./
+RUN npm config set registry http://registry.npmjs.org/ --global
 RUN npm install
 COPY . .
 RUN npm run build
