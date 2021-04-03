@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate 
+metadata:
+  name: thehabitprogrammer-com-tls 
+spec:
+  secretName: thehabitprogrammer-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: thehabitprogrammer.com 
+  dnsNames:
+    - thehabitprogrammer.com
+    - www.thehabitprogrammer.com
